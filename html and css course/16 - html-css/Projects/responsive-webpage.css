@@ -1,0 +1,41 @@
+.main-div {
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto;
+  position: relative;
+  width: 700px;
+  height: 500px;
+  border: 1px solid gray;
+  align-items: center;
+  margin-top: 200px;
+  margin-left: 400px;
+  background-color: gray;
+}
+
+
+
+.welcome {
+  font-size: 40px;
+  color: white;
+}
+
+
+.email {
+  color: white;
+  font-size: 18px;
+  position: absolute;
+  left: 35px;
+  top: 150px;
+}
+
+.email.place {
+  padding-right: 200px;
+}
+
+.password {
+  color: white;
+  font-size: 18px;
+  position: absolute;
+  left: 35px;
+  top: 200px;
+}

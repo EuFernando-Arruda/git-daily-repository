@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM projects</title>
+</head>
+<body>
+  <p>Youtube Subscribe Button</p>
+  <button
+  onclick="updateSubscribe()" 
+  class="js-subscribe-button">Subscribe</button>
+  <p>Amazon Shipping Calculator</p>
+  <input placeholder="cost of order" class="js-cost-input" 
+  onkeydown="
+   handleCostKeydown(event);
+    ">
+  <button onclick="calculateTotal();">Calculate</button>
+  <p class="js-result-shipping"></p>
+  <br><br><br><br><br>
+  <input placeholder="Type something" class="type" onkeydown="copyTyping();">
+  <p class="empty-p"></p>
+  <script>
+
+    function copyTyping() {
+      let emptyElement = document.querySelector('.empty-p');
+      let toType = document.querySelector('.type');
+      emptyElement.innerHTML = toType.value;
+      
+    };
+    function handleCostKeydown(event) {
+      if (event.key === 'Enter') {
+        calculateTotal();
+      }
+    };
+
+    function calculateTotal() {
+      let inputElement = document.querySelector('.js-cost-input');
+      let jsResultElement = document.querySelector('.js-result-shipping');
+      let inputValue = Number(inputElement.value);
+      if (inputValue < 40) {
+        jsResultElement.innerHTML = `$ ${(inputValue + 10).toFixed(2)}`;
+      } else {
+        jsResultElement.innerHTML = `$ ${inputValue.toFixed(2)}`;
+      }
+    }
+    function updateSubscribe() {
+      let buttonElement = document.querySelector('.js-subscribe-button')
+      
+      if (buttonElement.innerText === 'Subscribe') {
+        buttonElement.innerText = 'Subscribed'
+      } else {
+        buttonElement.innerText = 'Subscribe'
+      }
+
+    
+    };
+  </script>
+</body>
+</html>
